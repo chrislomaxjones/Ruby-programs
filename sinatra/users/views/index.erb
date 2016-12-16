@@ -1,0 +1,11 @@
+<% unless authenticate? %>
+	<p>There would be something secret here but oh well!</p>
+<% else %>
+	<p>You're logged in </p>
+<% end %>
+
+
+<p>Go to a <a href="/auth/secret">Secret Page</a></p>
+
+<a href="/register">Register an account</a>
+<a href="/login">Login</a>

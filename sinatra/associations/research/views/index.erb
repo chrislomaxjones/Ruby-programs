@@ -1,0 +1,28 @@
+<h1>Coffee Hero</h1>
+
+<a href="/coffee/add">Add a coffee</a> <br>
+
+<a href="/coffee/search">Search by coffee</a>
+<a href="/flavour/search">Search by flavour</a>
+
+<h2>Coffees we sell</h2>
+<% if @coffees.length != 0 %>
+	<ul>
+	<% @coffees.each do |coffee| %>
+		<li>
+			<h3><%= coffee.name %></h3>
+			<p><%= coffee.price %></p>
+			<p><%= coffee.size %></p>
+			<p><b>Flavours</b></p>
+			<ul><% coffee.flavours.each do |flavour| %>
+				<li>
+					<p><%= flavour.name %></p>
+					<p><%= "(contains nuts)" if flavour.contains_nuts %>
+				</li>
+			<% end %></ul>
+		</li>
+	<% end %>
+	</ul>
+<% else %>
+	<p>No coffees in stock!</p>
+<% end %>

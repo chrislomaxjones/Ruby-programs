@@ -1,0 +1,7 @@
+<form action="/<%= @link.id %>" method="post" id="delete">
+    <input type="hidden" name="_method" value="delete">
+    
+    <p>Are you sure you wish to delete <em><%= @link.title %></em>?</p>
+    <input type="submit" value="yes">
+    <a href="/">Cancel</a>
+</form>

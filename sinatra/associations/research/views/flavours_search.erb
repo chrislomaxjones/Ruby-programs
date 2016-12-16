@@ -1,0 +1,14 @@
+<h1>All flavours</h1>
+
+
+<ul><% @flavours.each do |flavour| %>
+	<li>
+		<h2><%= flavour.name%></h2>
+		<p><%= "(contains nuts)" if flavour.contains_nuts %></p>
+		
+		<p><b>Coffees:</b></p>
+		<ul><% flavour.coffees.each do |coffee| %>
+			<li><%= coffee.name %></li>
+		<% end %></ul>
+	</li>
+<% end %></ul>

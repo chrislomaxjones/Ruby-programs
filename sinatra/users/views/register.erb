@@ -1,0 +1,16 @@
+<% unless authenticate? %>
+	<form method="post" name="form">
+		<label>Username:</label>
+		<input type="text" name="username" placeholder="username">
+
+		<label>Email Address:</label>
+		<input type="text" name="email" placeholder="john@johnson.com">
+
+		<label>Password:</label>
+		<input type="password" name="password">
+
+		<input type="submit" value="Register">
+	</form>
+<% else %>
+	<p>You cannot register, you're already logged in</p>
+<% end %>

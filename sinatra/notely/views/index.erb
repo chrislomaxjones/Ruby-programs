@@ -1,0 +1,12 @@
+<p class="message"><%= @message %></p>
+
+<form action="/<%= @note.url %>" method="post" name="note-form">
+	<input type="hidden" name="_method" value="put">
+	<div class="text-wrapper"><textarea cols="40" rows="20" name="contents"><%= @note.contents %></textarea></div>
+	<input type="submit" value="save">
+</form>
+
+<form action="/<%= @note.url %>" method="post" name="note-delete-form">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="delete">
+</form>

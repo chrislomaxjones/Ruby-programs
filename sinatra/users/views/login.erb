@@ -1,0 +1,19 @@
+<% unless authenticate? %>
+	<% if @is_redirected %>
+	<p>You must login to access this page</p>	
+	<% end %>
+
+	<p><%= message if message %></p>
+
+	<form action="/login<%= @redirect_url %>" method="post" name="form">
+		<label>Username:</label>
+		<input type="text" name="username" placeholder="username">
+
+		<label>Password:</label>
+		<input type="password" name="password">
+
+		<input type="submit" value="Login">
+	</form>
+<% else %>
+	<p>You're already logged in</p>
+<% end %>

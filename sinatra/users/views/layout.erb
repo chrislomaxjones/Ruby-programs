@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Users</title>
+	</head>
+
+	<body>
+		<% if authenticate? %>
+		<a href="/logout">Log out</a>
+		<a href="/auth/profile">View profile</a>
+		<% end %>
+		
+		<h1>Users n shit</h1>
+		<%= yield %>
+	</body>
+</html>

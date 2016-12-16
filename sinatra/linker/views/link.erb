@@ -1,0 +1,6 @@
+<article>
+    <h2><a href="/id/<%= @link.id %>"><%= @link.title %></a> | <a href="<%= @link.url %>">Go</a></h2>
+    <p><%= @link.created_at %></p>
+    <p><%= @link.desc %></p>
+        <a href="/edit/<%= @link.id %>">[edit]</a> | <a href="/delete/<%= @link.id %>">[delete]</a>
+</article>

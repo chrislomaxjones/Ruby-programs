@@ -1,0 +1,37 @@
+<h3><%= @user.username %></h3>
+<p>Email: <%= @user.email_address %></p>
+<p>Created at: <%= @user.created_at %></p>
+
+
+<p>Edit Account</p>
+<b><%= update_message if defined? update_message != nil %></b>
+<form method="post" name="delete-form">
+
+	<em>You must enter your password to make changes.</em><br>
+	<label>Password:</label>
+	<input type="password" name="old_password">
+	<br>
+
+	<input type="hidden" name="_method" value="put">
+	<input type="text" name="username" value="<%= @user.username %>">
+
+	<input type="text" name="email" value="<%= @user.email_address %>">
+
+	<label>New password:</label>
+	<input type="password" name="new_password">
+
+	<input type="submit" value="update details">
+</form>
+
+<p>You'd probably want a warning here?</p>
+<b><%= delete_message if defined? delete_message != nil %></b>
+<form method="post" name="delete-form">
+
+	<em>You must enter your password to make changes.</em><br>
+	<label>Password:</label>
+	<input type="password" name="old_password">
+	<br>
+
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="Delete account">
+</form>

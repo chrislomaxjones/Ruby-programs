@@ -1,0 +1,15 @@
+<form action="/" method="post">
+    <input name="url" type="text" placeholder="http://">
+    <input name="title" type="text" placeholder="Title">
+    <textarea name="desc"></textarea>
+    <input type="submit">
+</form>
+
+<% @links.each do |link| %>
+<article>
+    <h2><a href="/id/<%= link.id %>"><%= link.title %></a> | <a href="<%= link.url %>">Go</a></h2>
+    <p><%= link.created_at %></p>
+    <p><%= link.desc %></p>
+    <a href="/edit/<%= link.id %>">[edit]</a> | <a href="/delete/<%= link.id %>">[delete]</a>
+</article>
+<% end %>

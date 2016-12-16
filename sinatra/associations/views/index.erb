@@ -1,0 +1,9 @@
+<% @users.each do |user| %>
+
+	<h2><%= user.username%></h2>
+	<ul>
+	<% user.uploads.each do |upload| %>
+		<li><%= upload.name %></li>
+	<% end %>
+	</ul>
+<% end %>
